@@ -5,7 +5,7 @@ app_name='common' # for redirection purpose
 
 urlpatterns=[
     path('adminlogin',views.adminlogin,name='adminlogin'),
-    path('customersignup',views.customersignup,name='customersignup'),
+    path('customer signup',views.customersignup,name='customersignup'),
     path('customerlogin',views.customerlogin,name='customerlogin'),
     path('',views.home,name='home'),
     path('sellersignup',views.sellersignup,name='sellersignup'),

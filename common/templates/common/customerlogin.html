@@ -1,12 +1,37 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
+{% extends 'common/master.html'  %}
+{% block content %}
+
+
 <body>
-    <h1>customer login</h1>
+    <table align="center" cellspacing="0" width="60%" style="background-color: antiquewhite;"><form action="">
+        <tr>
+            <td colspan="2" align="center">
+                <h1>create an account</h1>
+            </td>
+        </tr>
+        <tr>
+            <td width="15%"><label for="">name</label></td>
+            <td width="45%"><input type="text" size="30" placeholder="enter your name"></td>
+        </tr>
+        <tr>
+            <td width="15%"><label for="">password</label></td>
+            <td width="45%"><input type="password" placeholder="password"></td>
+        </tr>
+        <tr>
+            <td width="15%"><label for="">email</label></td>
+            <td width="45%"><input type="email" placeholder="enter your mail"></td>
+        </tr>
+        <tr>
+            <td align="center" width="10%" colspan="2"><input type="button" value="submit"  a></td>
+        </tr>
+        <tr>
+            <td colspan="2" align="center"><a href="{% url 'common:customersignup' %}">sign if you have already have a account</a></td>
+        </tr>
+
+
+
+    </form></table>
 </body>
 </html>
+
+{% endblock %}

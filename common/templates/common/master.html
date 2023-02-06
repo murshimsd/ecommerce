@@ -7,16 +7,16 @@
     <title>Document</title>
 </head>
 <body>
-    <div style="background-color: black; height: 300px;" >
-        <a href="{% url 'common:adminlogin' %}">admin login</a><br/>
-        <a href="{% url 'common:customerlogin' %}">customer login</a><br/>
+    <div style="background-color: white; border: 1px solid black; height: 20px;" >
+        <a href="{% url 'common:adminlogin' %}">admin login</a>
+        <a href="{% url 'common:customerlogin' %}">customer login</a>
         <a href="{% url 'common:sellerlogin' %}">seller login</a>
     </div>
     <div>
         {% block content %}
         {% endblock %}
     </div>
-    <div style="background-color: violet; height: 300px;"><h1>footer</h1></div>
+    <div style="background-color: violet; height: 50px; border: 1px solid black;"><h1>hhhh</h1></div>
     </body>
 </body>
 </html>

@@ -123,7 +123,10 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR,'common/static')
+    os.path.join(BASE_DIR,'common/static'),
+    os.path.join(BASE_DIR,'seller/static'),
+    os.path.join(BASE_DIR,'customer/static'),
+    os.path.join(BASE_DIR,'ecomdmin/static'),
 ]
 
 # Default primary key field type
