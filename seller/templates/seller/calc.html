@@ -1,0 +1,269 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+    <script src="{% static 'js/jquery-3.6.4.min.js' %}"></script>
+    <script src="https://code.jquery.com/jquery-3.6.4.js"
+        integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E=" crossorigin="anonymous"></script>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        
+
+        .container {
+            width: 255px;
+            height: 205px;
+            background-color: black;
+            margin: auto;
+            border-radius: 10px;
+            padding-top: 15px;
+        }
+
+        .num,
+        .oper,
+        .res {
+            width: 52px;
+            gap: 5px;
+            margin-left: 5px;
+            margin-bottom: 5px;
+        }
+
+        #screen {
+            width: 235px;
+            margin-left: 5px;
+            margin-bottom: 5px;
+            height: 20px;
+            margin-top: 10px;
+        }
+
+        #clear {
+            width: 52px;
+            margin-left: 5px;
+            background-color: rgb(222, 33, 33);
+            color: white;
+        }
+
+        .num:hover {
+            border-color: burlywood;
+
+        }
+
+        .oper:hover {
+            border-color: burlywood;
+        }
+
+        .res:hover {
+            border-color: burlywood;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+
+        <h3
+            style="color: white; font-size: 1.5rem; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; padding-left: 12px;">
+            casio</h3>
+        <form action="">
+            <input type="text" id="screen">
+            <br />
+            <input type="button" class="button num" value="7" onclick="show(7)">
+            <input type="button" class="button num" value="8" onclick="show(8)">
+            <input type="button" class="button num" value="9" onclick="show(9)">
+            <input type="button" class="oper" value="/" onclick="show('/')">
+            <br />
+            <input type="button" class="button num" value="4" onclick="show(4)">
+            <input type="button" class="button num" value="5" onclick="show(5)">
+            <input type="button" class="button num" value="6" onclick="show(6)">
+            <input type="button" class="oper" value="*" onclick="show('*')">
+            <br />
+            <input type="button" class="button num" value="1" onclick="show(1)">
+            <input type="button" class="button num" value="2" onclick="show(2)">
+            <input type="button" class="button num" value="3" onclick="show(3)">
+            <input type="button" class="oper" value="+" onclick="show('+')">
+            <br />
+            <input type="button" id="clear" value="c" onclick="cclear()">
+            <input type="button" class="button num" value="0" onclick="show(0)">
+            <input type="button" class="res" value="=" onclick="resultt()">
+            <input type="button" class="oper" value="-" onclick="show('-')">
+
+        </form>
+
+
+    </div>
+
+    <table id="tables" border="3">
+
+    </table>
+    <label for="">num of rows</label><input type="text" value="" id="rowss"><br />
+    <label for="">num of cols</label><input type="text" value="" id="colss">
+    <input type="button" value="ins" id="btn5" onclick="ins()">
+
+    <script>
+
+        // function ins() {
+        //     // table=document.getElementById("tables")
+        //     row = document.getElementById("rowss")
+        //     col = document.getElementById("colss")
+
+        //     for (var r = 0; r < parseInt(row.value); r++) {
+        //         var x = document.getElementById("tables").insertRow(r)
+        //         for (var c = 0; c < parseInt(col.value); c++) {
+        //          var y=x.insertCell(c)
+
+
+        //          y.innerHTML="row"+r   +"col "+c
+        //          y.style.width="50px"
+        //          y.style.height="50px"
+
+        //         }
+
+        //     }
+
+
+
+        // }
+
+
+
+
+
+
+
+        // function ins() {
+        //     row = document.getElementById("rowss")
+        //     col = document.getElementById("colss")
+        //     table = document.getElementById("tables")
+
+        //     for (var r = 0; r <= parseInt(row.value); r++) {
+        //         var rows = document.createElement("tr")
+
+        //         console.log(rows)
+        //         for (var c = 0; c <= parseInt(col.value); c++) {
+        //             var cols = document.createElement("td")
+        //             cols.innerHTML = "row-" + r + " col-" + c
+        //             rows.appendChild(cols)
+        //         }
+
+        //         table.appendChild(rows)
+        //     }
+        // }
+
+
+
+
+
+        // function ins(){
+        //     rows=document.getElementById("rowss")
+        //     cols=document.getElementById("colss")
+        //     table=document.getElementById("tables")
+
+        //     for( var i=0;i<parseInt(rows.value);i++){
+        //         var row=document.createElement("tr")
+        //         for( var j=0;j<parseInt(cols.value);j++){
+        //             var col=document.createElement("td")
+        //             col.innerHTML="row  "+i+"col  "+j
+        //             row.appendChild(col)
+        //         }
+        //         table.appendChild(row)
+        //     }
+        // }
+
+
+
+        function ins() {
+            rows = document.getElementById("rowss")
+            cols = document.getElementById("colss")
+            table = document.getElementById("tables")
+            for (i = 0; i < parseInt(rows.value); i++) {
+                var row = table.insertRow(i)
+                for (j = 0; j < parseInt(cols.value); j++) {
+                    var col = row.insertCell(j)
+                    col.innerHTML = "VBNM"
+                }
+            }
+
+        }
+
+
+        var screen = document.getElementById("screen")
+        var clear = document.getAnimations("clear")
+        i = 0
+
+
+
+
+        function show(val) {
+            // screen.value += val
+            if (val == "+") {
+                if (i < 1) {
+                    i++
+                    screen.value += val
+                }
+            } else if (val == "-") {
+                if (i < 1) {
+                    i++
+                    screen.value += val
+                }
+            } else if (val == "*") {
+                if (i < 1) {
+                    i++
+                    screen.value += val
+                }
+            } else if (val == "/") {
+                if (i < 1) {
+                    i++
+                    screen.value += val
+                }
+            }
+            else {
+                i = 0
+                screen.value += val
+            }
+
+
+        }
+        // function show1(val){
+        //  screen.value+=val
+
+
+
+        // // if(/[+-*/]/.test(this.value) && /[+-*/]/.test(screen.innerHTML)) {
+        // //     screen.innerHTML=screen.innerHTML.replace(screen.innerHTML[screen.innerHTML.length -1],'')
+        // //     console.log(screen.value)
+        // // }else{
+        // //     screen.innerHTML=""
+        // // }
+
+
+        // // if(show1(val).test(this.value) && show1(val).test(screen.innerHTML)){
+        // //     screen.value=""
+        // //     console.log(screen.value)
+        // // }else{
+        // //     screen.value="aa"
+        // // }
+
+
+        // }
+        function cclear() {
+            screen.value = ""
+
+        }
+
+        function resultt() {
+            screen.value = eval(screen.value)
+        }
+    </script>
+</body>
+
+</html>

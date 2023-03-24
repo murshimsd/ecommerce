@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <table>
+        <tr>
+            <th><label for="">first num</label></th>
+            <th><input type="number" id="num1"></th>
+        </tr>
+        <tr>
+            <th><label for="">seccond num</label></th>
+            <th><input type="number" id="num2"></th>
+        </tr>
+        <tr>
+            <td>
+                <label for="">select operator</label>
+            </td>
+            <td>
+                <select name="" id="select">
+                    <option value="+">+</option>
+                    <option value="*">*</option>
+                    <option value="-">-</option>
+                    <option value="/">/</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="">for answer</label>
+            </td>
+            <td>
+                <input type="button" value="click" onclick="calc()">
+            </td>
+        </tr>
+        <tr><td>
+            <label for="">answer</label>
+        </td>
+            <td>
+                <input type="text" id="ans" value="">
+            </td>
+        </tr>
+    </table>
+
+
+    <script>
+
+        function calc(){
+        var num1=document.getElementById("num1").value
+        var num2=document.getElementById("num2").value
+        var sel=document.getElementById("select")
+        var screen =document.getElementById("ans")
+
+        if(sel.value == "+"){
+             tot =Number(num1)+Number(num2)
+        }
+        else if(sel.value == "-"){
+            tot = num1-num2
+        }
+        else if(sel.value == "*"){
+            tot = num1*num2
+        }
+        else if(sel.value == "/"){
+            tot = num1/num2
+        }
+        else{
+            tot = "nothing selected"
+        }
+        screen.value=tot
+    }
+
+    </script>
+</body>
+
+</html>

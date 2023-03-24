@@ -1,0 +1,49 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="{% static 'js/jquery-3.6.4.min.js' %}"></script>
+    <script src="https://code.jquery.com/jquery-3.6.4.js"
+        integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E=" crossorigin="anonymous"></script>
+</head>
+<body>
+    <script>
+        var str="abcdefghityuifghjkcghjkdfghjklxcvdfgiqwertyuio"
+        var txt="hello world world"
+        console.log(str.length)
+        var n=str.slice(10,17)
+        console.log(n)
+        var n=str.substring(10,17)
+        console.log(n)
+        var n=str.substr(7,3) 
+        //  3 means num of letters
+        console.log(n)
+        var txt1=txt.replace("world","murshi")
+        console.log(txt1)
+        var txt2=txt.replaceAll("world","murshi")
+        console.log(txt2)
+        var u=str.toUpperCase()
+        console.log(u)
+        var l=str.toLowerCase()
+        console.log(l)
+        var con=str.concat(",",txt)
+        console.log(con)
+        var trim="       hellooi     "
+        var t=trim.trim()
+        console.log(t)
+        var t1=trim.trimStart()
+        console.log(t1)
+        var t2=t1.concat(txt)
+        console.log(t2)
+
+
+        var new1=txt.split(" ")
+        console.log(new1)
+
+    </script>
+</body>
+</html>

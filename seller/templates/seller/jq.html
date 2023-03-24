@@ -1,0 +1,137 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="{% static 'js/jquery-3.6.4.min.js' %}"></script>
+    <script src="https://code.jquery.com/jquery-3.6.4.js"
+        integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E=" crossorigin="anonymous">
+    </script>
+    <style>
+        #div1 {
+            background-color: rgb(0, 167, 20);
+            height: 200px;
+            width: 200px;
+        }
+
+        #div2 {
+            background-color: blanchedalmond;
+            height: 300px;
+            width: 300px;
+        }
+
+        #div3 {
+            background-color: blue;
+            height: 300px;
+            width: 300px;
+        }
+        #new{
+            background-color: green;
+            height: 300px;
+            width: 300px;
+        }
+    </style>
+</head>
+
+<body>
+    <p id="p1">
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tempore, ipsa.
+    </p>
+
+    <br />
+
+    <p class="pclass">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatibus fugit delectus repellendus
+        officia
+        autem soluta, eveniet dolore unde distinctio. Hic ab fugit dignissimos reiciendis, suscipit nam inventore, rerum
+        ipsam cumque qui molestias. Omnis quisquam maiores hic aliquid eveniet nisi ipsam magnam obcaecati consequatur
+        repudiandae nihil perferendis earum beatae, ducimus eum!</p>
+
+    <br />
+
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Deserunt illum perferendis, hic aliquam
+        delectus rerum doloremque blanditiis, culpa praesentium beatae dicta. Facere, illo consequuntur minima aliquid
+        commodi, nemo sunt ex accusantium facilis molestias laboriosam similique voluptatem veritatis unde dolorum
+        maxime!</p>
+
+    <div id="div1">
+
+    </div>
+    <input type="button" value="toggle" id="btn">
+    <input type="button" value="show" id="btn1">
+
+
+    <br />
+
+    <div id="div2">
+
+    </div>
+    <input type="button" value="slide up" id="up">
+    <input type="button" value="slide down" id="down">
+    <input type="button" value="slide toggle" id="stoggle">
+
+
+    <br />
+
+    <div id="div3">
+
+    </div>
+
+    <input type="button" value="fade out" id="fout">
+    <input type="button" value="fade in" id="fin">
+    <input type="button" value="fade toggle" id="ftoggle">
+    <input type="button" value="fade to" id="fto">
+    <br/>
+    <div  id="new">
+
+    </div>
+    <input type="button" value="tog" id="tod">
+
+    <script>
+
+        $(document).ready(function () {
+            $('.pclass').css('background-color', 'red')
+            $('#p1').click(function () {
+                // $(this).hide()
+            })
+            $('#btn').click(function () {
+                $('#div1').toggle()
+            })
+            $('#btn1').click(function () {
+                $('#div1').show()
+            })
+            $('#up').click(function () {
+                $('#div2').slideUp()
+            })
+            $('#down').click(function () {
+                $('#div2').slideDown()
+            })
+            $('#stoggle').click(function () {
+                $('#div2').slideToggle()
+            })
+            $('#fout').click(function () {
+                $('#div3').fadeOut()
+            })
+            $('#fin').click(function () {
+                $('#div3').fadeIn()
+            })
+            $('#ftoggle').click(function () {
+                $('#div3').fadeToggle(3000)
+            })
+            $('#fto').click(function () {
+                $('#div3').fadeTo('slow',0.15)
+            })
+            $("#tod").click(function(){
+                $("#new").slideUp()
+            })
+        })
+
+
+    </script>
+
+</body>
+
+</html>

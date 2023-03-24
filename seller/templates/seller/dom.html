@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+.calc{
+    background-color: black;
+    width: 300px;
+    padding-left: 10px;
+    width: 180px;
+    margin: auto;
+    border-radius: 5px;
+    column-gap: 1px;
+    border: 3px solid wheat;
+    border-radius: 4px;
+    
+}
+.num,.oper,.res{
+    background-color: bisque;
+    width: 30px;
+    height: 30px;
+    margin-top: 1px;
+    margin-left: 6px;
+    border-radius: 5px;
+}
+#clear{
+    background-color: red;
+    width: 30px;
+    height: 30px;
+    margin-left: 6px;
+    border-radius: 5px;
+}
+button{
+    margin-left: 20px;
+}
+h3{
+    color: white;
+    margin-left: 6px;
+    margin-top: 3px;
+}
+#screen{
+    margin-left: 6px;
+    margin-top: 3px;
+    width: 150px;
+}
+.num:hover{
+    border-color: white;
+}
+.oper:hover{
+    border-color: white;
+
+}
+#clear:hover{
+    border-color: white;
+}
+.res:hover{
+    border-color: white;
+}
+.ro{
+    margin-top: 3px;
+    margin-bottom: 3px;
+}
+    </style>
+</head>
+
+<body>
+     <!-- <h1 id="h1tag">cyber square</h1>
+    <p class="pclass">baabtra</p>
+    <p class="pclass">python</p>
+    <input type="button" value="click here" onclick="change()">
+    <input id="id1" type="text">
+    <input id="id2" type="text">
+    <input id="id3" type="text">
+    <input type="button" value="add" onclick="add()"> -->
+
+    <br/> <br/> <br/>
+    
+   
+    <div class="container calc">
+        <div class="row">
+            <div class="col">
+                <h3>casio</h3>
+            </div>
+        </div>
+        <div class="row">
+        <input type="text" id="screen">
+         </div><br/>
+        <div class="row ro">
+            <input type="button" class="button num" value="7" onclick="show(7)">
+            <input type="button" class="button num" value="8" onclick="show(8)">
+            <input type="button" class="button num" value="9" onclick="show(9)">
+            <input type="button" class="oper" value="/" onclick="show('/')">
+        </div>
+        <div class="row ro">
+            <input type="button" class="button num" value="4" onclick="show(4)">
+            <input type="button" class="button num" value="5" onclick="show(5)">
+            <input type="button" class="button num" value="6" onclick="show(6)">
+            <input type="button" class="oper" value="*" onclick="show('*')">
+        </div>
+        <div class="row ro">
+            <input type="button" class="button num" value="3" onclick="show(3)">
+            <input type="button" class="button num" value="2" onclick="show(2)">
+            <input type="button" class="button num" value="1" onclick="show(1)">
+            <input type="button" class="oper" value="-" onclick="show('-')">
+        </div>
+        <div class="row ro">
+            <input type="button" id="clear" value="c" onclick="clearr()">
+            <input type="button" class="button num" value="0" onclick="show(0)">
+            <input type="button" class="res" value="=" onclick="ans()">
+            <input type="button" class="oper" value="+" onclick="show('+')">
+        </div>
+    </div>
+
+  
+
+    <br/>
+   <input type="number" value="" id="row">
+   <input type="number" value="" id="col">
+   <input type="button" value="click" onclick="add()">
+   <table id="tbl" border="2">
+
+   </table>
+    
+
+    <script>
+  
+  
+        <!-- // h=document.getElementById("h1tag")
+        // console.log(h.innerHTML)   
+        // console.log(h)
+
+        // p1=document.getElementsByTagName("p")
+        // console.log(p1)
+        // console.log(p1[0])
+        // console.log(p1[1])
+
+
+        // p=document.getElementsByClassName("pclass")
+        // console.log(p)
+
+
+        // function change(){
+        //     h.innerHTML="welcome"
+
+
+        // } -->
+
+        function add(){
+            var row = document.getElementById("row")
+            var col = document.getElementById("col")
+            var tbl = document.getElementById("tbl")
+            for(i=0;i<row.value;i++){
+                var r = document.createElement("tr")
+                for(j=0;j<col.value;j++){
+                    var c=document.createElement("td")
+                    c.innerHTML="fgh"
+                    r.appendChild(c)
+                }
+                tbl.appendChild(r)
+
+            }
+        }
+
+
+     
+
+
+
+   
+    </script>
+</body>
+
+</html>

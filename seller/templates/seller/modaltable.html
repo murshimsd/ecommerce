@@ -1,0 +1,91 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+        crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="{% static 'css/aaa.css' %}">
+</head>
+<body>
+    <form action="">
+       <label for="">name</label> <input type="text" value="" id="names">
+       <label for="">age</label> <input type="text" value="" id="ages">
+       <label for="">num</label> <input type="text" value="" id="nums">
+    </form>
+    <input type="button" value="add" onclick="ins()"> 
+    <br/>
+    <table id="table" border="2">
+        <tr>
+            <th>name</th>
+            <th>age</th>
+            <th>num</th>
+        </tr>
+    </table>
+    <!-- Button trigger modal -->
+<!-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+    Launch demo modal
+  </button>  -->
+  
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        
+        <div class="modal-body">
+            <label for="">name</label> <input type="text" value="" id="mnames">
+            <label for="">age</label> <input type="text" value="" id="mages">
+            <label for="">num</label> <input type="text" value="" id="mnums">
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary" onclick="submits()">Save changes</button>
+          </div>
+      </div>
+    </div>
+  </div>
+    <script>
+        names=document.getElementById("names")
+        age=document.getElementById("ages")
+        num=document.getElementById("nums")
+        mnames=document.getElementById("mnames")
+        mage=document.getElementById("mages")
+        mnum=document.getElementById("mnums")
+        table=document.getElementById("table")
+        function ins(){
+            var row=table.insertRow()
+           var cell0 = row.insertCell(0)
+           var cell1 = row.insertCell(1)
+            var cell2 = row.insertCell(2)
+            var cell3 = row.insertCell(3)
+
+            cell0.innerHTML=names.value
+            cell1.innerHTML=age.value
+            cell2.innerHTML=nums.value
+            var edi=document.createElement("button")
+            edi.innerHTML="edit"
+            edi.setAttribute("data-bs-toggle","modal")
+            edi.setAttribute("data-bs-target","#exampleModal")
+            edi.addEventListener("click",function ind(event){
+                 a=event.target.parentElement.parentElement.children
+                mnames.value=a[0].innerHTML
+                mage.value=a[1].innerHTML
+                mnum.value=a[2].innerHTML
+            })
+            cell3.appendChild(edi)
+
+        }
+        function submits(){
+            a[0].innerHTML=mnames.value
+            a[1].innerHTML=mage.value
+            a[2].innerHTML=mnum.value
+        }
+    </script>
+</body>
+</html>

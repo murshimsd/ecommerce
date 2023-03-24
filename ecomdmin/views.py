@@ -12,3 +12,5 @@ def customerlist(request):
 
 def sellerlist(request):
     return render(request,'ecomdmin/sellerlist.html')
+
+    
