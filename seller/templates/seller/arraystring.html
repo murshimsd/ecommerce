@@ -1,0 +1,61 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="{% static 'js/jquery-3.6.4.min.js' %}"></script>
+    <script src="https://code.jquery.com/jquery-3.6.4.js"
+        integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E=" crossorigin="anonymous"></script>
+</head>
+<body>
+
+    <div id="div1">
+
+    </div>
+
+
+    <script>
+        var fruits=["mango","banana","orange","apple"]
+        var fruits2=["mango","banana","orange","apple"]
+        var c=document.getElementById("div1")
+        c.innerHTML=fruits.toString()
+        c.innerHTML=fruits.join('.')
+        fruits.push('berry')
+        c.innerHTML=fruits.toString()
+        fruits.pop()
+        c.innerHTML=fruits.toString()
+        fruits.shift()
+        c.innerHTML=fruits.toString()
+        fruits.unshift('mango')
+        c.innerHTML=fruits.toString()
+        fruits[0]="pappu"
+        c.innerHTML=fruits.toString()
+        delete fruits[2]
+        c.innerHTML=fruits.toString()
+        // var new1=fruits.concat(fruits2)
+        // console.log(new1)
+        fruits.splice(2,2,"grapes","perry")
+        console.log(fruits)
+        fruits.splice(0,1)
+        console.log(fruits)
+        var fruits3=fruits.slice(1)
+        console.log(fruits3)
+        fruits.push("aa","bb","cc")
+        console.log(fruits)
+        var fruits3=fruits.slice(1,3)
+        console.log(fruits3)
+        fruits.sort()
+        console.log(fruits)
+        fruits.reverse()
+        console.log(fruits)
+
+
+        
+        
+    </script>
+</body>
+
+</html>

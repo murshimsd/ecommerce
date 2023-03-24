@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            border: 1px solid black;
+        }
+        .container{
+            display: grid;
+            grid-template-columns: 100px 100px 100px 100px;
+            grid-template-rows:100px 100px 100px 100px ;
+            grid-gap: 5px;
+            justify-content: center;
+            align-content: center;
+
+
+        }
+        .div1{
+            grid-area: 1/1/2/5;
+            border: 1px solid black;
+
+        }
+        .div2{
+            display: grid;
+            grid-area: 2/1/3/4;
+            justify-content: center;
+            align-content: center;
+        }
+        .div3{
+            grid-area: 2/4/4/4;
+        }
+        .div4{
+            grid-area: 3/1/4/2;
+        }
+        .div5{
+            grid-area: 3/2/4/3;
+        }
+        .div6{
+            grid-area: 3/3/4/4;
+        }
+        .div7{
+            grid-area: 4/1/5/5;
+        }
+
+        
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="div1">heading</div>
+        <div class="div2">paragraph</div>
+        <div class="div3">sidebar</div>
+        <div class="div4">img1</div>
+        <div class="div5">img2</div>
+        <div class="div6">img3</div>
+        <div class="div7">footer</div>
+        
+    </div>
+</body>
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="">
+        <label for="">name</label><input type="text" value="" id="names"><span id="snames"></span><br/>
+        <label for="">mail</label><input type="email" value="" id="mailes"><span id="smailes"></span><br/>
+        <label for="">password</label><input type="password" id="passwords"><span id="spasswords" ></span><br/>
+        <label for="">phone</label><input type="text" id="phones"><span id="sphones"></span><br/>
+        <label for="">gender</label><input type="radio"  name="gender" value="male" id="males">male
+        <input type="radio" value="female" name="gender"  id="females">female
+         <span id="sgender"></span><br/>
+
+        <label for="">language</label><select name="" id="languages">
+            <option value="" >select lan</option>
+            <option value="mal">mal</option>
+            <option value="eng">eng</option>
+            <option value="hin">hin</option>
+        </select>
+        <span id="sselects"></span><br/>
+        <input type="button" value="submit" onclick="validd()">
+    </form>
+    <script>
+        names=document.getElementById("names")
+        mailes=document.getElementById("mailes")
+        passwords=document.getElementById("passwords")
+        phones=document.getElementById("phones")
+        languages=document.getElementById("languages")
+        males=document.getElementById("males")
+        females=document.getElementById("females")
+        
+
+        snames=document.getElementById("snames")
+        smailes=document.getElementById("smailes")
+        spasswords=document.getElementById("spasswords")
+        sphones=document.getElementById("sphones")
+        slanguages=document.getElementById("slanguages")
+        sgender=document.getElementById("sgender")
+
+
+        function validd(){
+            if(names.value==""){
+                snames.innerHTML="enter a name"
+                snames.style.color="red"
+                return false
+            }else{
+                snames.value=""
+            }
+            if(mailes.value.match(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/)==null){
+              smailes.innerHTML="not valid"
+              smailes.style.color="red"
+              return false
+            }else{
+                smailes.innerHTML=""
+            }
+            if(passwords.value.match(/^[A-Za-z]\w{7,14}$/)==null){
+                spasswords.innerHTML="not valid"
+                spasswords.style.color="red"
+              return false
+            }else{
+                smailes.innerHTML=""
+            }
+            if(phones.value.match(/^[1-9][0-9]{9}$/)==null){
+                sphones.innerHTML="enter valid num"
+                sphones.style.color="red"
+                return false
+            }else{
+                sphones.innerHTML=""
+            }
+            if(males.checked==false && females.checked==false){
+                sgender.innerHTML="choose one of them"
+                sgender.style.color="red"
+                return false
+            }else{
+                sgender.innerHTML=""
+            }
+            if(languages.value==""){
+                sselects.innerHTML="choose one"
+                sselects.style.color="red"
+                return false
+            }{
+                sselects.innerHTML=""
+            }
+            }
+
+            
+        
+    </script>
+</body>
+</html>

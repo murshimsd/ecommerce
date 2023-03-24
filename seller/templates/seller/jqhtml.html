@@ -1,0 +1,90 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="{% static 'js/jquery-3.6.4.min.js' %}"></script>
+    <script src="https://code.jquery.com/jquery-3.6.4.js"
+        integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E=" crossorigin="anonymous"></script>
+        <style>
+            .abc{
+                color: red;
+            }
+            #div1{
+                background-color: black;
+                height: 300px;
+                width: 300px;
+                border: 3px solid red;
+            }
+        </style>
+</head>
+<body>
+    <p id="p1">p tag <span id="span1">hiii</span></p>
+    <!-- <br/> -->
+    <p id="p2">second p </p>
+
+    <!-- <br/> -->
+
+<div id="div1">
+  <p id="innerp">child element</p>
+  <h1>child element</h1>
+</div>
+    
+
+
+
+
+    <script>
+$(document).ready(function(){
+    var a=$("#p1")
+    // a.html("hi")
+
+    
+    console.log(a)
+    console.log(a.text())
+    console.log(a.html())
+    
+
+
+    a.html("<b>hello world</b>")
+
+    // </br>
+
+    $("p").html(function(n,m){
+    //  return 'this p element has index:'+n
+     return 'this p element has content:'+m
+     
+
+    })
+
+    // a.remove()
+    // a.empty()
+    a.addClass("abc")
+
+    // <br/>
+
+    var b=$("#div1")
+    console.log(b.width())
+    console.log(b.height())
+    console.log(b.innerWidth())
+    console.log(b.innerHeight())
+    console.log(b.css("background-color"))
+    console.log(b.outerHeight())
+    console.log(b.outerWidth())
+    console.log(b.children())
+    console.log(b.children()[0])
+
+    var c=$("#innerp")
+    console.log(c.parent())
+    console.log(c.siblings())
+    console.log($("p").first())
+    console.log($("p").last().text())
+
+
+})
+    </script>
+</body>
+</html>

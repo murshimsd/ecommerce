@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+        crossorigin="anonymous"></script>
+</head>
+<body>
+    <form action="" >
+<label for="">mame</label><input type="text" placeholder="name" id="names"><span id="sname"></span><br/>
+<label for="">mail</label><input type="email"  id="mail"><span id="smail"></span><br/>
+<label for="">password</label><input type="password" placeholder="password" id="password"><span id="spassword"></span><br/>
+<label for="">phone num</label><input type="text" id="phones" placeholder="num"><span id="sphone"></span><br/>
+<label for="">gender</label><input type="radio" id="male" name="gender" value="male">male 
+                             <input type="radio" id="female" name="gender" value="female">female 
+                             <span id="sgender"></span>
+                             <br/>
+<select name="language" id="language" >
+    <option value="" >select lan</option>
+    <option value="mal" >malayalam</option>
+    <option value="eng">english</option>
+    <option value="hin">hindi</option>
+    <option value="tam">tamil</option>
+</select>   <span id="slanguage"></span>     
+ <input type="button" value="submit" id="submit" onclick="return validate()">                     
+                    
+    </form>
+
+
+    <br/>
+()">
+    <script>
+
+     
+        function validate(){
+           
+            nname=document.getElementById("names")
+            console.log(name)
+            mail=document.getElementById("mail")
+            passwords=document.getElementById("password")
+            phones=document.getElementById("phones")
+            male=document.getElementById("male")
+            female=document.getElementById("female")
+            language=document.getElementById("language")
+            sname=document.getElementById("sname")
+            console.log(sname)
+            smail=document.getElementById("smail")
+            spassword=document.getElementById("spassword")
+            sphone=document.getElementById("sphone")
+            sgender=document.getElementById("sgender")
+            slanguage=document.getElementById("slanguage")
+            if(nname.value==""){
+                console.log("name")
+                sname.innerHTML="enter your name"
+                sname.style.color="red"
+                return false
+            }else{
+                sname.innerHTML=""
+                console.log(nname.value)
+
+            }
+            if(mail.value==""){
+                smail.innerHTML="enter mail"
+                smail.style.color="red"
+                return false
+            }else{
+                smail.innerHTML=""
+            }
+            if(passwords.value.length!=8){
+             spassword.innerHTML="not contain 8 letters"
+             spassword.style.color="red"
+            }else if(passwords.value.match(/[a-z]/g)==null){
+              spassword.innerHTML="must contain a lower case"
+            }else if(passwords.value.match(/[A-Z]/g)==null){
+              spassword.innerHTML="must contain a UPPER case"
+            }
+            else{
+                spassword.value=""
+            }
+            
+            if(phones.value.match(/^[1-9][0-9]{9}$/)==null){
+                sphone.innerHTML="enter valid num"
+                sphone.style.color="red"
+                return false
+            }else{
+                sphone.innerHTML=""
+            }
+            if(male.checked==false && female.checked==false){
+                sgender.innerHTML="choose one of them"
+                return false
+            }else{
+                sgender.innerHTML=""
+            }
+            if(language.value==""){
+                console.log("aa")
+                slanguage.innerHTML="choose one"
+                slanguage.style.color="red"
+               
+            
+                return false
+                
+            }else{
+                slanguage.innerHTML=""
+            }
+
+    
+
+        }
+    </script>
+</body>
+</html>

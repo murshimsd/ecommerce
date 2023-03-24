@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="">
+        <label for="">company</label><input type="text" value="level" id="com"><br />
+        <label for="">product</label><input type="text" value="soap" id="pro"><br />
+        <label for="">quandity</label> <input type="text" value="30" id="qua"><br />
+        <label for="">stock</label><input type="text" value="10" id="sto"><br />
+        <input type="button" value="add" onclick="insertt()">
+    </form>
+    <br />
+    <br />
+    <br />
+    <table border="2" id="table">
+        <tr>
+            <th>serial num</th>
+            <th>company</th>
+            <th>product</th>
+            <th>quandity</th>
+            <th>stock</th>
+            <th>added date</th>
+            <th>status</th>
+            <th>edit</th>
+            <th>delet</th>
+        </tr>
+
+    </table>
+    <br/>
+    
+
+
+
+</body>
+<script>
+    com=document.getElementById("com")
+    pro=document.getElementById("pro")
+    qua=document.getElementById("qua")
+    sto=document.getElementById("sto")
+    table=document.getElementById("table")
+    i=0
+    function insertt(){
+       var row=table.insertRow ()
+       var cell1=row.insertCell(0)
+       var cell2=row.insertCell(1)
+       var cell3=row.insertCell(2)
+       var cell4=row.insertCell(3)
+       var cell5=row.insertCell(4)
+       var cell6=row.insertCell(5)
+       var cell7=row.insertCell(6)
+       var cell8=row.insertCell(7)
+       cell1.innerHTML=i
+       cell2.innerHTML=com.value
+       cell3.innerHTML=pro.value
+       cell4.innerHTML=qua.value
+       cell5.innerHTML=sto.value
+       cell6.innerHTML=new Date() .toDateString()
+        var btn1=document.createElement("button")
+       btn1.innerHTML="approve"
+       btn1.addEventListener("click",function stss(event){
+        event.target.innerHTML="approved"
+        event.target.disables=true
+       })
+       cell7.appendChild(btn1)
+        var btn2=document.createElement("button")
+       btn2.innerHTML="delet"
+       btn2.addEventListener("click",function rem(event){
+        var b=event.target.parentElement.parentElement
+        b.remove()
+       })
+       cell8.appendChild(btn2)
+       i++
+    }
+</script>
+
+</html>

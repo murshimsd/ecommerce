@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'ecomdmin',
     'common',
     
+    
 ]
 
 MIDDLEWARE = [

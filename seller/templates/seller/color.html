@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div style="background-color: red; height: 500px; width: 500px; " id="main">
+    </div>
+  <select name="color" id="sbox" onchange="cchange()">
+    <option value="select color" disabled selected>choose</option>
+    <option value="blue">blue</option>
+    <option value="yellow">yellow</option>
+    <option value="green">green</option>
+    <option value="black">black</option>
+  </select>
+  <br/>
+  <input type="password" id="password">
+  <input type="button" onclick="show()" id="btn">
+  <br/>
+  <select name="" id="sel">
+    <option value="ban">banana</option>
+    <option value="app">apple</option>
+    <option value="org">orange</option>
+    <option value="pap">pappaya</option>
+  </select>
+  <input type="button" value="click" onclick="delet()">
+  <br/>
+  <input type="text"  id="num1"><br/>
+  <select name="" id="sel1">
+    <option value="add">+</option>
+    <option value="minus">-</option>
+    <option value="mul">*</option>
+    <option value="div">/</option>
+  </select><br/>
+  <input type="text"  id="num2"><br/>
+  <input type="button" value="click" onclick="calc()"><br/>
+  <input type="text"  id="ans">
+<br/>
+<br/>
+<br/>
+<br/>
+<table id="tables" border="2">
+  <tr>
+    <th id="t1">
+      head
+    </th>
+    <th id="t2">
+      body
+    </th id="t3">
+      tale
+    </th>
+  </tr>
+  <tr>
+    <td>1</td>
+    <td>2</td>
+    <td>3</td>
+  </tr>
+</table>
+<input type="text" value="" id="val1">
+<label for="">row</label><input type="text" value="" id="rowss"><br/>
+<label for="">col</label><input type="text" value="" id="colss"><br/>
+<input type="button" value="clk" onclick="ent()">
+i
+
+
+  <script>
+    // function ent(){
+    //   user=document.getElementById("val1")
+    //   row=document.getElementById("rowss")
+    //   col=document.getElementById("colss")
+    //   table=document.getElementById("tables")
+    //   cell=table.rows[parseInt(row.value)].cells
+    //   cell[parseInt(col.value)].innerHTML=user.value
+
+    // }
+
+function ent(){
+  user=document.getElementById("val1")
+  row=document.getElementById("rowss")
+  col=document.getElementById("colss")
+  table=document.getElementById("tables")
+  cell=table.rows[Number(row.value)].cells
+  cell[parseInt(col.value)].innerHTML=user.value
+}
+
+   
+  
+    function cchange(){
+      main=document.getElementById("main")
+      sbox=document.getElementById("sbox")
+      main.style.backgroundColor=sbox.value
+    }
+    function show(){
+        password=document.getElementById("password")
+        password.type="text"
+        
+
+    }
+    function delet(){
+        sel=document.getElementById("sel")
+        sel.remove(sel.selectedIndex)
+    }
+    function calc(){
+     num1=Number(document.getElementById("num1").value)
+     num2=Number(document.getElementById("num2").value)
+     sel=document.getElementById("sel1")
+     ans=document.getElementById("ans")
+      var res=0
+     if(sel.value=="add"){
+        res=num1+num2
+     }
+     else if(sel.value=="minus"){
+        res=num1-num2
+     }
+     else if(sel.value=="mul"){
+        res=num1*num2
+     }else if(sel.value=="div"){
+        res=num1/num2
+     }
+     ans.value=res
+    }
+    let a=5
+        let b=10
+        console.log(a==b);
+  </script>
+</body>
+
+</html>

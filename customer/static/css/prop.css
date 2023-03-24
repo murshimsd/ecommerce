@@ -1,0 +1,80 @@
+/* color properties */
+
+h1{
+    color: red;
+    /* visibility: hidden; */
+    display: none;
+}
+h2{
+    color:#52FF33 ;
+}
+
+h3{
+    color:rgb(8, 122, 122);
+}
+
+p{
+    color:rgba(51, 8, 224, 0.6);
+}
+
+/* background properties */
+
+body{
+    height:fit-content;
+    background-image: url("https://picsum.photos/200/300") ;
+    /* background-repeat:no-repeat; */
+    /* background-repeat: repeat-y; */
+    /* background-repeat:no-repeat; */
+    /* background-position: right top; */
+    /* background-size: cover; */
+}
+
+/* font and text properties */
+
+p{
+    font-size: 50px;
+    font-style: italic;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    text-align: center;
+    /* text-decoration:overline; */
+    text-transform: uppercase;
+
+}
+
+marquee{
+
+    color: red;
+}
+/* overflow */
+#overflow{
+
+    height: 250px;
+    border: 3px solid black;
+    width: 800px;
+    background-color: #52FF33;
+    overflow: auto;
+    box-shadow: 20px 40px 60px 20px red;
+    margin-bottom: 100px;
+
+}
+
+a:visited{
+    color: green;
+
+}
+ a:hover{
+    color: red;
+ }
+
+ input:focus{
+    color: yellow;
+ }
+
+ input::placeholder{
+    color: #52FF33;
+ }
+
+ h2::first-letter{
+    color: blue;
+ }

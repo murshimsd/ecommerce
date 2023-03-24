@@ -1,0 +1,68 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/intro.css' %}">
+    <style>
+        h2 {
+            color: red;
+        }
+
+        input[type="text"] {
+            color: yellow;
+            font-size: large;
+        }
+
+        img[alt="image"] {
+            color: brown;
+            font-size: large;
+        }
+
+        #div1{
+            color: red;
+            
+        }
+
+        #div1 p {
+        color: inherit;
+        }
+
+        h1,h4,h3,h2 {
+            color: rgb(73, 12, 215);
+            font-style: italic;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 style="color:blue">css intro</h1>
+    <h2>hlo</h2>
+    <p id="para1">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam suscipit voluptate natus deleniti
+        cum nam
+        dolorem libero corrupti laborum assumenda facilis in reiciendis dolorum, cumque recusandae ratione! Sequi
+        deserunt possimus corrupti voluptas error? Cupiditate dignissimos similique, eveniet rerum voluptatibus vitae
+        quisquam enim pariatur vero itaque vel culpa modi possimus? Consectetur.</p>
+    <h3 class="abc">baabtra</h3>
+    <p class="abc">welcom</p>
+    <h4 class="abc">cybersquare</h4>
+    <p id="para2">Lorem ipsum dolor <span>Lorem ipsum dolor sit amet.</span> amet consectetur adipisicing elit. Laborum,
+        delectus.</p>
+    <input type="text" size="15" placeholder="attribue selector">
+    <img src="{% static 'image/bb.jpg' %}" alt="image">
+
+    <div id="div1" style="background-color: steelblue;">
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aliquam harum hic dicta neque numquam! Doloremque
+            est obcaecati corporis neque libero consequatur? Voluptas recusandae quae itaque natus quasi ullam aperiam
+            porro?</p>
+    </div>
+
+    
+
+</body>
+
+</html>
